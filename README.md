@@ -1,5 +1,5 @@
 ---
-<h3 align = 'center'><font color = '#186A3B'>Heba Mohamed Abdelmonam Mahmoud (20399129)</font></h3>
+<h3 align = 'center'><font color = '#186A3B'>NYC Data Analysis for Predicting Property Prices</font></h3>
 
 ---
 
