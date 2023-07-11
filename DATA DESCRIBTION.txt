@@ -1,0 +1,72 @@
+> **OBSERVATION** - After Exploring the variables and reading the [dataset documentation ](https://www.nyc.gov/site/finance/taxes/definitions-of-property-assessment-terms.page), I found that:
+
+- **BOROUGH**: A digit code for the borough the property is located in; in order these are Manhattan (1), Bronx (2), Brooklyn (3), Queens (4), and Staten Island (5). 
+  
+  > **This variable should be a categorical variable**
+
+- **NEIGHBORHOOD**: The name of the neighborhood where the property is located (in this case, Annadale)
+  > **This variable should be a categorical variable**
+
+- **BUILDING CLASS CATEGORY**: A code indicating the type of building (in this case, all properties are classified as 01 ONE FAMILY DWELLINGS)
+  > **This variable should be a categorical variable**
+
+- **TAX CLASS AT PRESENT**: Every property in the city is assigned to one of four tax classes (Classes 1, 2, 3, and 4), based on the use of the property. 
+Property in NYC is divided into 4 classes:
+
+  - **Class 1**: Includes most residential property of up to three units (family homes and small stores or offices with one or two apartments attached), and most condominiums that are not more than three stories.
+
+  - **Class 2**: All other property that is not in Class 1 and is primarily residential (rentals, cooperatives and condominiums). Class 2 includes:
+    - Sub-Class 2a  (4 -  6 unit rental building);
+    - Sub-Class 2b  (7 - 10 unit rental building);
+    - Sub-Class 2c  (2 - 10 unit cooperative or condominium); and
+
+  - **Class 3**: Includes property with equipment owned by a gas, telephone or electric company.
+
+  - **Class 4**: Includes all other properties not included in class 1,2, and 3, such as offices, factories, warehouses, garage buildings, etc.
+
+- **BLOCK and LOT**: A Tax Block is a sub-division of the borough on which real properties are located. The Department of Finance uses a Borough-Block-Lot classification to label all real property in the City. 
+  > Because there are more than 11k unique blocks in the dataset, it doesn't make sense to define it as a categorical variable. **I will leave it as numerical**.
+
+- **BUILDING CLASS AT PRESENT**: A code indicating the type of building at the time of sale.
+    - The first position of the Building Class is a letter that is used to describe a general class of properties (for example “A” signifies one-family homes, “O” signifies office buildings. “R” signifies condominiums). 
+      > **This variable should be a categorical variable**
+
+- **ADDRESS**: The street address of the property
+  > We are not going to extract any information from the address.
+
+- **ZIP CODE**: The ZIP code of the property.
+  > **This variable should be a categorical variable**
+
+- **RESIDENTIAL UNITS**: The number of residential units in the building
+  > **This variable should be a numeric variable**
+
+- **COMMERCIAL UNITS**: The number of commercial units in the building
+  > **This variable should be a numeric variable**
+
+- **TOTAL UNITS**: The total number of units in the building
+  > **This variable should be a numeric variable**
+
+- **LAND SQUARE FEET**: The area of the land on which the building is located
+  > **This variable should be a numeric variable**
+
+- **GROSS SQUARE FEET**:The total area of all the floors of a building as measured from the exterior surfaces of the outside walls of the building, including the land area and space within any building or structure on the property.
+  > **This variable should be a numeric variable**
+
+- **YEAR BUILT**: The year the building was constructed
+  > **This variable should be a categorical variable**
+
+- **TAX CLASS AT TIME OF SALE**: The tax class of the property at the time of sale
+  > **This variable should be a categorical variable**
+
+- **BUILDING CLASS AT TIME OF SALE**: A code indicating the type of building at the time of sale.
+  > **This variable should be a categorical variable**
+
+- **SALE PRICE**: The sale price of the property
+  > **This variable should be a numeric variable**
+
+- **SALE DATE**: The date of the sale
+  > This variable should be **data time**. However, we can save the "year" or "month" part as a new **categorical variable**.
+---
+
+
+Note: 0 Dollar Sales Price: A 0 dollar sale indicates that there was a transfer of ownership without a cash consideration. There can be a number of reasons for a 0 dollar sale including transfers of ownership from parents to children. We will remove all of these observations
